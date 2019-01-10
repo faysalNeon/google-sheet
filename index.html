@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Home Management</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+      <style>
+        body{ height: 100vh; background-repeat: no-repeat; background-size: cover;}
+        main{ display: flex; flex-direction: column; justify-content: center; height: 100%; background-color: rgba(0,0,0,0.5);}
+      </style>
+    </head>
+    <body style="background-image: url(assets/image/bg.jpg);">
+      <main>
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m8 l6 offset-m2 offset-l3">
+               <div class="card center-align">
+                  <div class="card-content">
+                    <span class="card-title">Member Login</span>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="pin" type="password" class="validate" onkeypress="numOnly()">
+                        <!-- <input id="pin" type="password" class="validate" pattern="[0-9]*" inputmode="numeric"> -->
+                        <label for="pin">Enter Your Pin</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-action">
+                    <a class="waves-effect waves-light btn" onclick="getAccess()">Processing . . . <i class="material-icons right">cloud</i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+      <script>
+        function numOnly(){ if ((event.keyCode < 48 || event.keyCode > 57)) {event.returnValue = false;} }
+        function getAccess(){
+          var pinNumber=document.getElementById("pin").value;
+          if (pinNumber==""){
+             M.toast({html: 'Wrong Password'});
+          }else{
+
+          }
+        }
+
+
+
+      </script>
+
+
+    </body>
+  </html>
